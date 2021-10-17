@@ -1,4 +1,4 @@
-import { startLikes, stopLikes, getLikes, getIsStarted } from '@/commands/content/contentHelpers.ts'
+import { startLikes, stopLikes, getIsStarted } from '@/commands/content/contentHelpers.ts'
 
 console.log('hello world content todo something~')
 
@@ -72,9 +72,7 @@ chrome.runtime.onMessage.addListener((msg, sender, callback) => {
     callback('stop-likes')
     return
   }
-  if (msg.from === 'popup' && msg.subject === 'get-likes') {
-    callback(getLikes())
-  }
+
   if (msg.from === 'popup' && msg.subject === 'get-is-started') {
     callback(getIsStarted())
   }
