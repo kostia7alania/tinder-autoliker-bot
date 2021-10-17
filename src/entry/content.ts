@@ -1,4 +1,4 @@
-import { /* domChangeHandler, */ getDataBySections } from '@/commands/content/contentHelpers.ts'
+// import { /* domChangeHandler, */ getDataBySections } from '@/commands/content/contentHelpers.ts'
 
 console.log('hello world content todo something~')
 
@@ -62,7 +62,7 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
 
     // Directly respond to the sender (popup),
     // through the specified callback.
-    const res = getDataBySections()
-    response(res)
+    // const res = getDataBySections()
+    response('test')
   }
 })

@@ -87,8 +87,8 @@ module.exports = {
     'space-before-function-paren': 'off',
     'no-mixed-operators': 'off',
     // allow debugger during development
-    'no-debugger': isProduction ? 'error' : 'off',
-    'no-console': isProduction ? 2 : 0,
+    'no-debugger': 0, // isProduction ? 'error' : 'off',
+    'no-console': 0, // isProduction ? 2 : 0,
     'vue/component-name-in-template-casing': [
       'error',
       'PascalCase',

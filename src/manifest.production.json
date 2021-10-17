@@ -4,11 +4,11 @@
   "description": "chrome extension",
   "default_locale": "en",
   "version": "0.0.1",
-  "permissions": ["activeTab", "<all_urls>", "*://*/*"],
+  "permissions": ["https://tinder.com/app/recs", "storage"],
   "icons": {
-    "16": "icons/16.png",
-    "48": "icons/48.png",
-    "128": "icons/128.png"
+    "16": "icons/dark/16.png",
+    "48": "icons/dark/48.png",
+    "128": "icons/dark/128.png"
   },
   "background": {
     "scripts": ["/js/background.js"],
@@ -18,8 +18,8 @@
     "default_popup": "popup.html",
     "default_title": "__MSG_extName__",
     "default_icon": {
-      "19": "icons/19.png",
-      "38": "icons/38.png"
+      "19": "icons/dark/19.png",
+      "38": "icons/dark/38.png"
     }
   },
   "content_scripts": [
@@ -28,6 +28,24 @@
       "js": ["/js/content.js"]
     }
   ],
+  "commands": {
+    "toggle-feature-foo": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L"
+      },
+      "description": "Toggle feature foo"
+    },
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+A"
+      }
+    },
+    "_execute_page_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Q"
+      }
+    }
+  },
   "options_page": "options.html",
   "devtools_page": "devtools.html",
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"

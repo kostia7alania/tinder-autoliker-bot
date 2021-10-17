@@ -4,11 +4,11 @@
   "description": "chrome extension",
   "default_locale": "en",
   "version": "0.0.1",
-  "permissions": ["https://my.pokercraft.com/completed-tournament", "storage"],
+  "permissions": ["https://tinder.com/app/recs", "storage"],
   "icons": {
-    "16": "icons/16.png",
-    "48": "icons/48.png",
-    "128": "icons/128.png"
+    "16": "icons/dark/16.png",
+    "48": "icons/dark/48.png",
+    "128": "icons/dark/128.png"
   },
   "background": {
     "scripts": ["/js/background.js"],
@@ -18,8 +18,8 @@
     "default_popup": "popup.html",
     "default_title": "__MSG_extName__",
     "default_icon": {
-      "19": "icons/19.png",
-      "38": "icons/38.png"
+      "19": "icons/dark/19.png",
+      "38": "icons/dark/38.png"
     }
   },
   "content_scripts": [

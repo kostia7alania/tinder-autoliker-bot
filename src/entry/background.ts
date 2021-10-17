@@ -1,4 +1,4 @@
-/* eslint-disable no-alert */
+// eslint-disable no-console
 // console.log('hello world background todo something~')
 // console.log('hello world background todo something~')
 // console.log('hello world background todo something~')
