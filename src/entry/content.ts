@@ -1,4 +1,4 @@
-// import { /* domChangeHandler, */ getDataBySections } from '@/commands/content/contentHelpers.ts'
+import { startLikes, stopLikes, getLikes, getIsStarted } from '@/commands/content/contentHelpers.ts'
 
 console.log('hello world content todo something~')
 
@@ -50,19 +50,32 @@ chrome.runtime.sendMessage({
 })
 
 // Listen for messages from the popup.
-chrome.runtime.onMessage.addListener((msg, sender, response) => {
+chrome.runtime.onMessage.addListener((msg, sender, callback) => {
   // First, validate the message's structure.
-  if (msg.from === 'popup' && msg.subject === 'DOMInfo') {
-    // Collect the necessary data.
-    // const domInfo = {
-    //   total: document.querySelectorAll('*').length,
-    //   inputs: document.querySelectorAll('input').length,
-    //   buttons: document.querySelectorAll('button').length,
-    // }
+  // Collect the necessary data.
+  // const domInfo = {
+  //   total: document.querySelectorAll('*').length,
+  //   inputs: document.querySelectorAll('input').length,
+  //   buttons: document.querySelectorAll('button').length,
+  // }
 
-    // Directly respond to the sender (popup),
-    // through the specified callback.
-    // const res = getDataBySections()
-    response('test')
+  // Directly respond to the sender (popup),
+  // through the specified callback.
+  // const res = getDataBySections()
+  if (msg.from === 'popup' && msg.subject === 'start-likes') {
+    startLikes()
+    callback('start-likes')
+    return
+  }
+  if (msg.from === 'popup' && msg.subject === 'stop-likes') {
+    stopLikes()
+    callback('stop-likes')
+    return
+  }
+  if (msg.from === 'popup' && msg.subject === 'get-likes') {
+    callback(getLikes())
+  }
+  if (msg.from === 'popup' && msg.subject === 'get-is-started') {
+    callback(getIsStarted())
   }
 })
